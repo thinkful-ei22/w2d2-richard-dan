@@ -10,8 +10,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.js-result-images {
+  float: left;
+}
 
-
+.js-description {
+  font-size: 15px;
+  overflow: auto;
+}
 
 
 /* 
