@@ -9,11 +9,12 @@ function getDataFromApi(searchTerm, callback) {
     data: {
       part: 'snippet',
       key: API_KEY,
-      q: `${searchTerm}`
+      q: `${searchTerm}`,
+      maxResults: 10
     },
     dataType: 'json',
     type: 'GET',
-    success: callback
+    success: callback,
   };
 
   $.ajax(settings);
@@ -23,6 +24,7 @@ function renderResult(result) {
   return `
   <div>
     <h2>
+    <a href="https://www.youtube.com/watch?v=${result.id.videoId}"><img class="js-result-images" src="${result.snippet.thumbnails.medium.url}}" alt="" width="100px"></a>
     <a class="js-result-title" href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank">${result.snippet.title}</a></h2>
     <p>Description: <span class="js-description">${result.snippet.description}</span></p>
   </div>
