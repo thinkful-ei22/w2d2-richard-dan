@@ -82,15 +82,15 @@ const generateVideoItemHtml = function (result) {
   <div>
     <h2>
     <div id="container">
-      <img class="js-result-images"  onclick="revealVideo('video','youtube')" src="${result.thumbnail}" alt="" width="auto" height="250px;">
-      <div id="video" class="lightbox" onclick="hideVideo('video','youtube')">
+      <img class="js-result-images"  onclick="revealVideo('div${result.id}','iframe${result.id}')" src="${result.thumbnail}" alt="${result.description}" width="auto" height="250px;">
+      <div id="div${result.id}" class="lightbox" onclick="hideVideo('div${result.id}','iframe${result.id}')">
         <div class="lightbox-container">  
           <div class="lightbox-content">
-            <button onclick="hideVideo('video','youtube')" class="lightbox-close">
+            <button onclick="hideVideo('div${result.id}','iframe${result.id}')" class="lightbox-close">
               Close | ✕
             </button>
           <div class="video-container">
-            <iframe id="youtube" width="960" height="540" src="https://www.youtube.com/embed/${result.id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+            <iframe id="iframe${result.id}" width="960" height="540" src="https://www.youtube.com/embed/${result.id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
           </div>         
         </div>
       </div>
